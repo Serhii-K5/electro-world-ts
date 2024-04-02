@@ -9,7 +9,7 @@
     ],
     "jsx": "react-jsx",
     "module": "esnext",
-    // "rootDir": "frontend/src",
+    "rootDir": "frontend/src",
     "moduleResolution": "node",
     "resolveJsonModule": true,
     "allowJs": true,
