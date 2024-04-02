@@ -9,7 +9,7 @@ import ShoppingCart from '../ShoppingCart/ShoppingCart';
 // import logo from "../../assets/images/logo.png";
 
 import { useSelector } from 'react-redux';
-import { selectOrders } from 'redux/selectors';
+import { selectOrders, selectLanguages } from 'redux/selectors';
 
 import MessageModule from 'components/Feedback/Feedback';
 import { LanguageBar } from 'components/LanguageBar/LanguageBar';
@@ -19,7 +19,7 @@ import Footer from 'components/Footer/Footer';
 
 import NavLinkBar from 'components/NavLinkBar/NavLinkBar';
 import SearchField from 'components/SearchField/SearchField';
-import { selectLanguages } from 'redux/selectors';
+// import { selectLanguages } from 'redux/selectors';
 import lang from 'assets/json/language.json';
 
 // import { useSearchParams } from 'react-router-dom';
