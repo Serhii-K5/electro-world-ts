@@ -1,12 +1,14 @@
 import { createSlice } from "@reduxjs/toolkit";
 
-interface DirectoryPath {
-  // Define the structure of a product object
-  // directoryPath: number;
+interface DirectoryPathItem {
+  id: number; // Assuming id is the unique identifier for a directory path item
+  cat_id: number; // Assuming cat_id represents category ID
+  cat_parentId: number; // Assuming cat_id represents category parentId
+  // Add other properties if needed for your directory path structure
 }
 
 interface DirectoryPathState {
-  items: DirectoryPath[],
+  items: DirectoryPathItem[],
 }
 
 const initialState: DirectoryPathState = {
@@ -20,7 +22,7 @@ const sliceDirectoryPath = createSlice({
     // addDirectoryPath(state, action) {
     //   // state.items.push(action.payload);
     // },
-    changeDirectoryPath(state, action) {
+    changeDirectoryPath(state, action: { payload: DirectoryPathItem }) {
       const index = state.items.findIndex(item =>
         item.cat_id === action.payload.cat_parentId);
       
@@ -28,11 +30,11 @@ const sliceDirectoryPath = createSlice({
       
       state.items.push(action.payload);
     },
-    deleteDirectoryPath(state, action) {
+    deleteDirectoryPath(state, action: { payload: number }) {
       const index = state.items.findIndex(item => item.id === action.payload);
       state.items.splice(index, 1);
     },
-    deleteAllDirectoryPath(state, action) {
+    deleteAllDirectoryPath(state) {
       // state.items = action.payload;
       state.items = [];
     },
@@ -40,4 +42,6 @@ const sliceDirectoryPath = createSlice({
 });
 
 // export const { addDirectoryPath, changeDirectoryPath, deleteDirectoryPath, deleteAllDirectoryPath } = sliceDirectoryPath.actions;
+export const { changeDirectoryPath, deleteDirectoryPath, deleteAllDirectoryPath } = sliceDirectoryPath.actions;
 export const directoryPathReducer = sliceDirectoryPath.reducer;
+
