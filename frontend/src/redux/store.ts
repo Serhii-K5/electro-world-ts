@@ -18,6 +18,12 @@ import { categoriesReducer } from './slice/categorySlice';
 import { filtersReducer } from './slice/filtersSlice';
 import { userNameReducer } from './slice/userNameSlice';
 
+interface RootState {
+  products: ProductsState;
+
+
+  languages: LanguageState;
+}
 
 const ordersPersistConfig = {
   key: 'orders',
@@ -49,7 +55,6 @@ const userNamePersistConfig = {
   storage,
 };
 
-
 export const store = configureStore({
   reducer: {
     products: productsReducer,
@@ -59,7 +64,6 @@ export const store = configureStore({
     categories: persistReducer(categoriesPersistConfig, categoriesReducer),
     filters: persistReducer(filtersPersistConfig, filtersReducer),
     userName: persistReducer(userNamePersistConfig, userNameReducer),
-    // ordersAll: persistReducer(numberPurchasesPersistConfig, ordersAllReducer),
   },
   middleware: getDefaultMiddleware =>
     getDefaultMiddleware({
@@ -69,4 +73,6 @@ export const store = configureStore({
     }),
 });
 
+export default RootState;
 export const persistor = persistStore(store);
+
