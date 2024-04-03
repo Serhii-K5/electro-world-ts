@@ -9,7 +9,7 @@
     ],
     "jsx": "react-jsx",
     "module": "esnext",
-    "rootDir": "frontend/src",
+    "rootDir": "./frontend/src",
     "moduleResolution": "node",
     "resolveJsonModule": true,
     "allowJs": true,
@@ -29,11 +29,11 @@
     "skipLibCheck": true,
   },
   "include": [
-    "src"
+    "./frontend/src"
   ],
   "exclude": [
     "./node_modules", 
-    "frontend/dist",
+    "./frontend/dist",
     "**/*.spec.ts"
   ]
 }

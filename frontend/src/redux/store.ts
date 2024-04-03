@@ -11,18 +11,21 @@ import {
 import storage from 'redux-persist/lib/storage';
 import { configureStore } from '@reduxjs/toolkit';
 import { productsReducer } from './slice/productSlice';
-import { orderReducer } from './slice/orderSlice';
+import { ordersReducer } from './slice/orderSlice';
 import { languagesReducer } from './slice/languageSlice';
 import { directoryPathReducer } from './slice/directoryPathSlice';
 import { categoriesReducer } from './slice/categorySlice';
 import { filtersReducer } from './slice/filtersSlice';
 import { userNameReducer } from './slice/userNameSlice';
 
-interface RootState {
+export interface RootState {
   products: ProductsState;
-
-
+  orders: OrdersState;
   languages: LanguageState;
+  directoryPath: DirectoryPathState;
+  categories: CategoryState;
+  filters: FiltersState;
+  userName: UserNameState;
 }
 
 const ordersPersistConfig = {
@@ -58,7 +61,7 @@ const userNamePersistConfig = {
 export const store = configureStore({
   reducer: {
     products: productsReducer,
-    orders: persistReducer(ordersPersistConfig, orderReducer),
+    orders: persistReducer(ordersPersistConfig, ordersReducer),
     languages: persistReducer(languagesPersistConfig, languagesReducer),
     directoryPath: persistReducer(directoryPathPersistConfig, directoryPathReducer),
     categories: persistReducer(categoriesPersistConfig, categoriesReducer),
@@ -73,6 +76,4 @@ export const store = configureStore({
     }),
 });
 
-export default RootState;
 export const persistor = persistStore(store);
-

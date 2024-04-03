@@ -1,10 +1,10 @@
 import { createSlice } from "@reduxjs/toolkit";
 
 interface DirectoryPathItem {
-  id: number; // Assuming id is the unique identifier for a directory path item
-  cat_id: number; // Assuming cat_id represents category ID
-  cat_parentId: number; // Assuming cat_id represents category parentId
-  // Add other properties if needed for your directory path structure
+  id?: number;
+  cat_id: number; 
+  cat_parentId: number; 
+  cat_photo?: string;
 }
 
 interface DirectoryPathState {

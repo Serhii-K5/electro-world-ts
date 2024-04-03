@@ -1,23 +1,21 @@
 import { createSlice, createAsyncThunk } from "@reduxjs/toolkit";
 // import { RootState } from "../store" // Import RootState type
-import { RootState } from "../store" // Import RootState type
-// import axios from 'axios';
+import axios from 'axios';
 
 interface Product {
-  // Define the structure of a product object
   id: number;
   code: string;
   name: string;
-  memo: string;
+  memo?: string;
   price: number;
-  oldPrice: number;
+  oldPrice?: number;
   quantity: number;
   parentId: number;
   fullPath: string;
-  photo: string;
-  alternatives: string;
-  related: string;
-  ordered: number;
+  photo?: string;
+  alternatives?: string;
+  related?: string;
+  ordered?: number;
 }
 
 interface ProductsState {

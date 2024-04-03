@@ -3,6 +3,9 @@ import { createSlice } from "@reduxjs/toolkit";
 interface FilterValue {
   // Define the type of the filter value based on your logic
   // It could be a string, number, or an object with specific properties
+  key: string;
+  // value?: string | number ;
+  value?: any;
 }
 
 interface FilterItem {
@@ -53,6 +56,7 @@ const sliceFilters = createSlice({
           if (typeof value === 'object' && !(value instanceof Array) && 'key' in value) { 
             // Если значение является объектом и это не массив, повторно вызывается функция
             // searchKey(value, state.items[existingFilterIndex].value.key);
+            searchKey(value as any, state.items[existingFilterIndex].key);
             // searchKey(value as object, (value as object).key);
             searchKey(value as any, key);
           } else if (value instanceof Array && Number.isFinite(value[0])) {
@@ -80,7 +84,8 @@ const sliceFilters = createSlice({
         const existingFilterIndex = currentArray.findIndex(filter => filter.key === currentKey);
         if (existingFilterIndex !== -1) { 
           // Если ключ существует, обновляем значение
-          if (!value || value === "") {
+          // if (!value || value === "") {
+          if (!value) {
             currentArray.splice(existingFilterIndex, 1);
           } else if (typeof value === 'object' && (value instanceof Array)) { 
             // Если значение является объектом и это не массив, повторно вызывается функция
