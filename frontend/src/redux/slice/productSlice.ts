@@ -67,5 +67,3 @@ const handleRejected = (state: ProductsState, action: any) => { // Update type i
 };
 
 export const productsReducer = productSlice.reducer;
-// xcd
- 
