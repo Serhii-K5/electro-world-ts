@@ -13,7 +13,7 @@ interface FilterItem {
   value: FilterValue[];
 }
 
-interface FiltersState {
+export interface FiltersState {
   items: FilterItem[];
 }
 

@@ -4,11 +4,11 @@ interface OrderItem {
   id: number; 
 }
 
-interface OrdersState {
+export interface OrdersState {
   items: OrderItem[];
 }
 
-const initialState: OrdersState = {
+export const initialState: OrdersState = {
   items: [],
 };
 

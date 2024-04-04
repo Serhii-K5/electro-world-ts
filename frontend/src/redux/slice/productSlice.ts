@@ -1,4 +1,5 @@
 import { createSlice, createAsyncThunk } from "@reduxjs/toolkit";
+import { PersistPartial } from 'redux-persist';
 // import { RootState } from "../store";
 import axios from 'axios';
 
@@ -18,7 +19,7 @@ interface Product {
   ordered?: number;
 }
 
-interface ProductsState {
+export interface ProductsState {
   items: Product[];
   isLoading: boolean;
   error: string | null;
@@ -40,9 +41,13 @@ export const fetchProducts = createAsyncThunk<Product[]>(
       return thunkAPI.rejectWithValue(e.message);
     }
   }
-);
-
-const productSlice = createSlice({
+  );
+  
+  // const productSlice = createSlice<ProductsState & PersistPartial, any>({
+  //   // ... your slice definition
+  // });
+// const productSlice = createSlice({
+const productSlice = createSlice<ProductsState & PersistPartial, any>({
   name: 'products',
   initialState,
   reducers: {

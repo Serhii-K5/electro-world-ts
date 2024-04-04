@@ -1,6 +1,6 @@
 import { createSlice } from "@reduxjs/toolkit";
 
-interface CategoryState {
+export interface CategoryState {
   category: number;
 }
 

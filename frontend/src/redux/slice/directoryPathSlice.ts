@@ -7,7 +7,7 @@ interface DirectoryPathItem {
   cat_photo?: string;
 }
 
-interface DirectoryPathState {
+export interface DirectoryPathState {
   items: DirectoryPathItem[],
 }
 

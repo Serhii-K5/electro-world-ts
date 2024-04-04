@@ -3,11 +3,11 @@ import { createSlice } from "@reduxjs/toolkit";
 // подключить для определения языка по языку системы
 // const userLanguage = navigator.language;
 
-interface LanguageState {
+export interface LanguageState {
   language: number;
 }
 
-const initialState: LanguageState = {
+export const initialState: LanguageState = {
   // language: 'UA',
   // отключить при определении языка по языку системы
   language: 0,

@@ -1,6 +1,7 @@
 import {
   persistStore,
   persistReducer,
+  // PersistPartial,
   FLUSH,
   REHYDRATE,
   PAUSE,
@@ -17,6 +18,14 @@ import { directoryPathReducer } from './slice/directoryPathSlice';
 import { categoriesReducer } from './slice/categorySlice';
 import { filtersReducer } from './slice/filtersSlice';
 import { userNameReducer } from './slice/userNameSlice';
+
+import { ProductsState } from './slice/productSlice';
+import { OrdersState } from './slice/orderSlice';
+import { LanguageState } from './slice/languageSlice';
+import { DirectoryPathState } from './slice/directoryPathSlice';
+import { CategoryState } from './slice/categorySlice';
+import { FiltersState } from './slice/filtersSlice';
+import { UserNameState } from './slice/userNameSlice';
 
 export interface RootState {
   products: ProductsState;
@@ -58,9 +67,17 @@ const userNamePersistConfig = {
   storage,
 };
 
+// export const store = configureStore({
+//   // ... other configuration
+//   reducer: {
+//     products: productSlice.reducer,
+//     // ... other reducers
+//   },
+// });
 export const store = configureStore({
   reducer: {
     products: productsReducer,
+    // products: productSlice.reducer,
     orders: persistReducer(ordersPersistConfig, ordersReducer),
     languages: persistReducer(languagesPersistConfig, languagesReducer),
     directoryPath: persistReducer(directoryPathPersistConfig, directoryPathReducer),
