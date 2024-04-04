@@ -1,5 +1,5 @@
 import { createSlice, createAsyncThunk } from "@reduxjs/toolkit";
-// import { RootState } from "../store" // Import RootState type
+// import { RootState } from "../store";
 import axios from 'axios';
 
 interface Product {
@@ -36,7 +36,7 @@ export const fetchProducts = createAsyncThunk<Product[]>(
     try {
       const response = await axios.get('/product');
       return response.data;
-    } catch (e) {
+    } catch (e: any) {
       return thunkAPI.rejectWithValue(e.message);
     }
   }
@@ -45,6 +45,9 @@ export const fetchProducts = createAsyncThunk<Product[]>(
 const productSlice = createSlice({
   name: 'products',
   initialState,
+  reducers: {
+    // Add your product-specific reducers here (e.g., addProduct, removeProduct, updateProduct)
+  },
   extraReducers: builder => {
     builder
       .addCase(fetchProducts.pending, handlePending)
@@ -61,7 +64,7 @@ const handlePending = (state: ProductsState) => {
   state.isLoading = true;
 };
 
-const handleRejected = (state: ProductsState, action: any) => { // Update type if needed
+const handleRejected = (state: ProductsState, action: any) => {
   state.isLoading = false;
   state.error = action.payload;
 };
