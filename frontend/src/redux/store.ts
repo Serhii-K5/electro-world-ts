@@ -77,7 +77,6 @@ const userNamePersistConfig = {
 export const store = configureStore({
   reducer: {
     products: productsReducer,
-    // products: productSlice.reducer,
     orders: persistReducer(ordersPersistConfig, ordersReducer),
     languages: persistReducer(languagesPersistConfig, languagesReducer),
     directoryPath: persistReducer(directoryPathPersistConfig, directoryPathReducer),

@@ -1,4 +1,7 @@
 import { createSlice } from "@reduxjs/toolkit";
+// import { PersistPartial } from 'redux-persist';
+import { PersistPartial } from 'redux-persist';
+
 
 interface OrderItem {
   id: number; 
@@ -12,24 +15,24 @@ export const initialState: OrdersState = {
   items: [],
 };
 
-const ordersSlice = createSlice({
+const ordersSlice = createSlice<OrdersState & PersistPartial, any>({
   name: 'orders',
   initialState,
   reducers: {
-    addOrders(state, action: { payload: OrderItem[] }) {
+    addOrders(state: any, action: { payload: OrderItem[] }) {
       state.items.push(...action.payload); 
     },
-    deleteOrders(state, action: { payload: number }) {
+    deleteOrders(state: any, action: { payload: number }) {
       const index = state.items.findIndex(item => item.id === action.payload);
       state.items.splice(index, 1);
     },
-    updateOrders(state, action: { payload: OrderItem }) {
+    updateOrders(state: any, action: { payload: OrderItem }) {
       const index = state.items.findIndex(item => item.id === action.payload.id);
       if (index !== -1) {
         state.items.splice(index, 1, action.payload);
       }
     },
-    deleteAllOrders(state) {
+    deleteAllOrders(state: any) {
       state.items = [];
     },
   },

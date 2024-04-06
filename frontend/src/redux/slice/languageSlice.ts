@@ -15,7 +15,7 @@ export const initialState: LanguageState = {
   // language: userLanguage === 'ru' ? 1 : 0,
 };
 
-const sliceLanguage = createSlice({
+const sliceLanguage = createSlice<LanguageState & PersistPartial, any>({
   name: "languages",
   initialState,
   reducers: {

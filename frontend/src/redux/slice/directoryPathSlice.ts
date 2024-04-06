@@ -15,7 +15,7 @@ const initialState: DirectoryPathState = {
   items: [],
 };
 
-const sliceDirectoryPath = createSlice({
+const sliceDirectoryPath = createSlice<DirectoryPathState & PersistPartial, any>({
   name: 'directoryPath',
   initialState,
   reducers: {

@@ -21,7 +21,7 @@ const initialState: FiltersState = {
   items: [],
 };
 
-const sliceFilters = createSlice({
+const sliceFilters = createSlice<FiltersState & PersistPartial, any>({
   name: 'filters',
   initialState,
   reducers: {    

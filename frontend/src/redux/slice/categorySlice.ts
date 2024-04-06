@@ -8,7 +8,7 @@ const initialState: CategoryState = {
   category: 0,
 };
 
-const sliceCategory = createSlice({
+const sliceCategory = createSlice<CategoryState & PersistPartial, any>({
   name: 'categories',
   initialState,
   reducers: {

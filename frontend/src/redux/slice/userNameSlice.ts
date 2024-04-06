@@ -8,7 +8,7 @@ const initialState: UserNameState = {
   name: "",
 };
 
-const userNameSlice = createSlice({
+const userNameSlice = createSlice<UserNameState & PersistPartial, any>({
   name: "userName",
   initialState,
   reducers: {
