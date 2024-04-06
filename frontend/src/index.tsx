@@ -1,13 +1,13 @@
 import React from 'react';
 import ReactDOM from 'react-dom/client';
-import App from './App'; // Assuming 'app.js' is now a TypeScript output
+import App from './App'; 
 import { BrowserRouter } from 'react-router-dom';
 import { PersistGate } from 'redux-persist/integration/react';
 import { Provider } from 'react-redux';
 import {
   persistor,
   store,
-} from './redux/store'; // Ensure proper types are defined for store and persistor
+} from './redux/store'; 
 import './styles/index.css';
 
 const root = ReactDOM.createRoot(document.getElementById('root') as HTMLElement);
