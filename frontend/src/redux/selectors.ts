@@ -1,6 +1,8 @@
 import { RootState } from "./store"  // Import RootState type
 
 export const selectProducts = (state: RootState) => state.products.items;
+export const selectIsProductsLoading = (state: RootState) => state.products.isLoading;
+export const selectProductsError = (state: RootState) => state.products.error;
 
 export const selectOrders = (state: RootState) => state.orders.items;
 
