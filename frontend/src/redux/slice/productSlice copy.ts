@@ -3,7 +3,7 @@ import { PersistPartial } from 'redux-persist';
 // import { RootState } from "../store";
 import axios from 'axios';
 
-export interface Product {
+interface Product {
   id: number;
   code: string;
   name: string;
