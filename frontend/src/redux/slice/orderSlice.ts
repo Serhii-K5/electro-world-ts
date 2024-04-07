@@ -1,5 +1,4 @@
 import { createSlice } from "@reduxjs/toolkit";
-// import { PersistPartial } from 'redux-persist';
 import { PersistPartial } from 'redux-persist';
 
 

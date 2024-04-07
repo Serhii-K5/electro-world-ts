@@ -1,4 +1,5 @@
 import { createSlice } from "@reduxjs/toolkit";
+import { PersistPartial } from 'redux-persist';
 
 export interface UserNameState {
   name: string;
@@ -12,7 +13,7 @@ const userNameSlice = createSlice<UserNameState & PersistPartial, any>({
   name: "userName",
   initialState,
   reducers: {
-    changeUserName(state, action: { payload: string }) {
+    changeUserName(state: any, action: { payload: string }) {
       state.name = action.payload;
     },
   },

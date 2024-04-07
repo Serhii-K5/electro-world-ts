@@ -1,4 +1,5 @@
 import { createSlice } from "@reduxjs/toolkit";
+import { PersistPartial } from 'redux-persist';
 
 // подключить для определения языка по языку системы
 // const userLanguage = navigator.language;
@@ -19,7 +20,7 @@ const sliceLanguage = createSlice<LanguageState & PersistPartial, any>({
   name: "languages",
   initialState,
   reducers: {
-    changeLanguage(state, action: { payload: number }) {
+    changeLanguage(state: any, action: { payload: number }) {
       state.language = action.payload;
     },
   },

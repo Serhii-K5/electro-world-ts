@@ -1,4 +1,5 @@
 import { createSlice } from "@reduxjs/toolkit";
+import { PersistPartial } from 'redux-persist';
 
 interface FilterValue {
   // Define the type of the filter value based on your logic
@@ -25,7 +26,7 @@ const sliceFilters = createSlice<FiltersState & PersistPartial, any>({
   name: 'filters',
   initialState,
   reducers: {    
-    addFilters(state, action: { payload: { key: string; value: FilterValue } }) {
+    addFilters(state: any, action: { payload: { key: string; value: FilterValue } }) {
       const { key, value } = action.payload;
       // Проверяем, существует ли уже объект с таким ключом
       const existingFilterIndex = state.items.findIndex(filter => filter.key === key);
@@ -45,7 +46,7 @@ const sliceFilters = createSlice<FiltersState & PersistPartial, any>({
         state.items.push({ key, value: [value] });
       }
     },
-    changeFilters(state, action: { payload: { key: string; value: FilterValue | FilterValue[] } }) {
+    changeFilters(state: any, action: { payload: { key: string; value: FilterValue | FilterValue[] } }) {
       const { key, value } = action.payload;
       
       // const searchKey = (currentArray: FilterItem[], currentKey: string) => {
@@ -76,7 +77,7 @@ const sliceFilters = createSlice<FiltersState & PersistPartial, any>({
 
       searchKey(state.items, key);
     },
-    deleteFilters(state, action: { payload: { key: string; value?: FilterValue } }) {
+    deleteFilters(state: any, action: { payload: { key: string; value?: FilterValue } }) {
       // const { key } = action.payload;
       const { key, value } = action.payload;
 

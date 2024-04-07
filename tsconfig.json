@@ -27,6 +27,7 @@
     "noImplicitReturns": true,
     "noFallthroughCasesInSwitch": true,
     "skipLibCheck": true,
+    "skipDefaultLibCheck": true,
   },
   "include": [
     "./frontend/src"

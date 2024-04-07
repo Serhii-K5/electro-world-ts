@@ -1,4 +1,5 @@
 import { createSlice } from "@reduxjs/toolkit";
+import { PersistPartial } from 'redux-persist';
 
 export interface CategoryState {
   category: number;
@@ -12,7 +13,7 @@ const sliceCategory = createSlice<CategoryState & PersistPartial, any>({
   name: 'categories',
   initialState,
   reducers: {
-    changeCategory(state, action: { payload: number }) {
+    changeCategory(state: any, action: { payload: number }) {
       state.category = +action.payload;
     },
   },

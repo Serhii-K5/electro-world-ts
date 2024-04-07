@@ -1,4 +1,5 @@
 import { createSlice } from "@reduxjs/toolkit";
+import { PersistPartial } from 'redux-persist';
 
 interface DirectoryPathItem {
   id?: number;
@@ -22,7 +23,7 @@ const sliceDirectoryPath = createSlice<DirectoryPathState & PersistPartial, any>
     // addDirectoryPath(state, action) {
     //   // state.items.push(action.payload);
     // },
-    changeDirectoryPath(state, action: { payload: DirectoryPathItem }) {
+    changeDirectoryPath(state: any, action: { payload: DirectoryPathItem }) {
       const index = state.items.findIndex(item =>
         item.cat_id === action.payload.cat_parentId);
       
@@ -30,11 +31,11 @@ const sliceDirectoryPath = createSlice<DirectoryPathState & PersistPartial, any>
       
       state.items.push(action.payload);
     },
-    deleteDirectoryPath(state, action: { payload: number }) {
+    deleteDirectoryPath(state: any, action: { payload: number }) {
       const index = state.items.findIndex(item => item.id === action.payload);
       state.items.splice(index, 1);
     },
-    deleteAllDirectoryPath(state) {
+    deleteAllDirectoryPath(state: any) {
       // state.items = action.payload;
       state.items = [];
     },
