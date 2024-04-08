@@ -67,13 +67,6 @@ const userNamePersistConfig = {
   storage,
 };
 
-// export const store = configureStore({
-//   // ... other configuration
-//   reducer: {
-//     products: productSlice.reducer,
-//     // ... other reducers
-//   },
-// });
 export const store = configureStore({
   reducer: {
     products: productsReducer,
