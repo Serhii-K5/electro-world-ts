@@ -1,16 +1,16 @@
-import React, { FC } from 'react';
+import { FC } from 'react';
 import { Routes, Route, Navigate } from 'react-router-dom';
 
-import Layout from 'components/Layout/Layout';
-import HomePage from 'pages/HomePage/HomePage';
-import CatalogPage from 'pages/CatalogPage/CatalogPage';
-import OrdersPage from 'pages/OrdersPage/OrdersPage';
-import CategoryPage from 'pages/CategoryPage/CategoryPage';
-import HelpPage from 'pages/HelpPage/HelpPage';
-import AboutUsPage from 'pages/AboutUsPage/AboutUsPage';
-import DeliveryPage from 'pages/DeliveryPage/DeliveryPage';
-import AdminPage from 'pages/AdminPage/AdminPage';
-import CheckoutPage from 'pages/CheckoutPage/CheckoutPage';
+import Layout from './components/Layout/Layout';
+import HomePage from './pages/HomePage/HomePage';
+import CatalogPage from './pages/CatalogPage/CatalogPage';
+import OrdersPage from './pages/OrdersPage/OrdersPage';
+import CategoryPage from './pages/CategoryPage/CategoryPage';
+import HelpPage from './pages/HelpPage/HelpPage';
+import AboutUsPage from './pages/AboutUsPage/AboutUsPage';
+import DeliveryPage from './pages/DeliveryPage/DeliveryPage';
+import AdminPage from './pages/AdminPage/AdminPage';
+import CheckoutPage from './pages/CheckoutPage/CheckoutPage';
 
 const App: FC = () => {
   // Обработчик события beforeunload
