@@ -8,26 +8,14 @@ export const VodafoneBg = styled.div`
 `;
 
 export const Span = styled.span`
+  color: var(--primary-white);
   font-size: 16px;
   width: 162px;
-  transition: font-size ${transition}, color ${transition};
+  transition: color ${transition};
 
-  &#black {
-    color: var(--primary-black);
-
-    &.isScaleKs,
-    &.isScaleVd {
-      color: red;
-    }
-  }
-
-  &#blue {
-    color: var(--active-blue);
-    
-    &.isScaleKs,
-    &.isScaleVd {
-      color: red;
-    }
+  &.isScaleKs,
+  &.isScaleVd {
+    color: red;
   }
 `;
 

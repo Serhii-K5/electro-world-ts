@@ -2,7 +2,7 @@ import { createSlice } from "@reduxjs/toolkit";
 import { PersistPartial } from 'redux-persist';
 
 
-interface OrderItem {
+export interface OrderItem {
   id: number; 
 }
 

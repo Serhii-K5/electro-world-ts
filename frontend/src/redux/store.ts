@@ -29,13 +29,15 @@ import { UserNameState } from './slice/userNameSlice';
 
 export interface RootState {
   products: ProductsState;
-  orders: OrdersState;
+  // orders: OrdersState;
+  orders: { items: OrderItem[] };
   languages: LanguageState;
   directoryPath: DirectoryPathState;
   categories: CategoryState;
   filters: FiltersState;
   userName: UserNameState;
 }
+
 
 const ordersPersistConfig = {
   key: 'orders',
@@ -86,3 +88,4 @@ export const store = configureStore({
 });
 
 export const persistor = persistStore(store);
+
