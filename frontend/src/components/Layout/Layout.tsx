@@ -100,6 +100,7 @@ interface AppState extends RootState {
 export default function Layout(): React.FC {
   // const orderProducts = useSelector<AppState, OrderProduct[]>(selectOrders);
 
+  
   const orderProducts = useSelector<AppState, OrderItem[]>(selectOrders);
 
   const [isModalShown, setIsModalShown] = useState(false);
