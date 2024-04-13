@@ -15,6 +15,7 @@ import CheckoutPage from './pages/CheckoutPage/CheckoutPage';
 const App: FC = () => {
   // Обработчик события beforeunload
   window.addEventListener('beforeunload', (event: BeforeUnloadEvent) => {
+    
     // Очистка ненужных ключей в localStorage
     localStorage.clear();
   });
