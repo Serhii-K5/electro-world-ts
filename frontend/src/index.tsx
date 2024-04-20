@@ -8,6 +8,7 @@ import {
   persistor,
   store,
 } from './redux/store'; 
+
 import './styles/index.css';
 
 const root = ReactDOM.createRoot(document.getElementById('root') as HTMLElement);
